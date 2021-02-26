@@ -1,5 +1,9 @@
 # Introduccion a proyecto de restaurante poli
+- [Alcance](##alcance)
 
+- [Objetivo](##objetivo)
+
+- [Equipo](##Equipo)
 ## Alcance
 
 El proyecto de restaurante cuenta con las siguientes caracteristicas:
