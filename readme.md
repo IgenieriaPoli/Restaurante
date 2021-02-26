@@ -21,6 +21,6 @@ Permitir el ingreso de datos relacionados a pedidos, productos, servicios presta
 
 El equipo de desarrollo cuenta con 4 integrantes:
 
-- Cristhian Martinez.
-- Ashley Katherine Cadena.
+- Cristhian David Camargo Martinez.
+- Ashley Katherine Cadena avendaño.
 - Samir Diaz.
