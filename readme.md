@@ -2,7 +2,7 @@
 
 ## Descripción de proyecto 
 
-Este proyecto esta diseñado para minimizar los tiempo de atencion al usuario final y llevar control de sus servicios  y asi poder registrar cambios de ordenes facturaciones y registro de empleados.  
+Este proyecto esta diseñado para minimizar los tiempo de atencion al usuario final y llevar control de sus servicios  y asi poder registrar el ingreso de productos, facturaciones y registro de empleados, con esta aplicacion lograremos un mejor manejo de datos y recursus asiendo de esta un aplicacion responsive y amigable con los usuarios.  
 
 ## Alcance
 
