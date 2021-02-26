@@ -1,9 +1,16 @@
 # Introduccion a proyecto de restaurante poli
+ 
+- [descripcion](##descripcion)
+
 - [Alcance](##alcance)
 
 - [Objetivo](##objetivo)
 
 - [Equipo](##Equipo)
+## Descripción de proyecto 
+
+Este proyecto esta diseñado para minimizar los tiempo de atencion al usuario final y llevar control de sus servicios  y asi poder registrar cambios de ordenes facturaciones y registro de empleados.  
+
 ## Alcance
 
 El proyecto de restaurante cuenta con las siguientes caracteristicas:
