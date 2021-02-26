@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="restaurante_el_buen_saborModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="comanda">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_numero_mesa" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="identificacion" />
+      <PropertyRef Name="fkpk_tipo_doc" />
+    </Key>
+    <Property Name="identificacion" Type="int" Nullable="false" />
+    <Property Name="fkpk_tipo_doc" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="primer_nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="segundo_nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="primer_apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="segundo_apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="contrasenia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fk_rol" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estado_mesa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="facturacion">
+    <Key>
+      <PropertyRef Name="fkpk_id_comanda" />
+    </Key>
+    <Property Name="fkpk_id_comanda" Type="int" Nullable="false" />
+    <Property Name="propina" Type="int" Nullable="false" />
+    <Property Name="cobro" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mesas">
+    <Key>
+      <PropertyRef Name="numero_mesa" />
+    </Key>
+    <Property Name="numero_mesa" Type="int" Nullable="false" />
+    <Property Name="fk_id_estado" Type="int" Nullable="false" />
+    <Property Name="comensales" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pedidos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fk_id_producto" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="fk_id_comanda" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="imagen" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="precio_compra" Type="int" Nullable="false" />
+    <Property Name="precio_venta" Type="int" Nullable="false" />
+    <Property Name="stock" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rol" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipo_documento">
+    <Key>
+      <PropertyRef Name="tipo_documento" />
+    </Key>
+    <Property Name="tipo_documento" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'restaurante_el_buen_sabor.dbo.productos_mesa' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="productos_mesa">
+    <Key>
+      <PropertyRef Name="numero_mesa" />
+      <PropertyRef Name="cantidad" />
+      <PropertyRef Name="producto" />
+      <PropertyRef Name="precio_venta" />
+    </Key>
+    <Property Name="numero_mesa" Type="int" Nullable="false" />
+    <Property Name="cantidad" Type="int" Nullable="false" />
+    <Property Name="producto" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="precio_venta" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'restaurante_el_buen_sabor.dbo.view_empleado' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="view_empleado">
+    <Key>
+      <PropertyRef Name="identificacion" />
+      <PropertyRef Name="fkpk_tipo_doc" />
+      <PropertyRef Name="primer_nombre" />
+      <PropertyRef Name="primer_apellido" />
+      <PropertyRef Name="segundo_nombre" />
+      <PropertyRef Name="segundo_apellido" />
+      <PropertyRef Name="telefono" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="direccion" />
+      <PropertyRef Name="rol" />
+    </Key>
+    <Property Name="identificacion" Type="int" Nullable="false" />
+    <Property Name="fkpk_tipo_doc" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="primer_nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="primer_apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="segundo_nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="segundo_apellido" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefono" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="rol" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_empleado_rol">
+    <End Role="rol" Type="Self.rol" Multiplicity="1" />
+    <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="rol">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="fk_rol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pedidos_comandas">
+    <End Role="comanda" Type="Self.comanda" Multiplicity="1" />
+    <End Role="pedidos" Type="Self.pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comanda">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pedidos">
+        <PropertyRef Name="fk_id_comanda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pedidos_productos">
+    <End Role="productos" Type="Self.productos" Multiplicity="1" />
+    <End Role="pedidos" Type="Self.pedidos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="pedidos">
+        <PropertyRef Name="fk_id_producto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkpk_empleado_tipodoc">
+    <End Role="tipo_documento" Type="Self.tipo_documento" Multiplicity="1" />
+    <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_documento">
+        <PropertyRef Name="tipo_documento" />
+      </Principal>
+      <Dependent Role="empleado">
+        <PropertyRef Name="fkpk_tipo_doc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkpk_facturaciuon_comanda">
+    <End Role="comanda" Type="Self.comanda" Multiplicity="1" />
+    <End Role="facturacion" Type="Self.facturacion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="comanda">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="facturacion">
+        <PropertyRef Name="fkpk_id_comanda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkpk_mesas_estado">
+    <End Role="estado_mesa" Type="Self.estado_mesa" Multiplicity="1" />
+    <End Role="mesas" Type="Self.mesas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estado_mesa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="mesas">
+        <PropertyRef Name="fk_id_estado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fkpk_numero_mesa">
+    <End Role="mesas" Type="Self.mesas" Multiplicity="1" />
+    <End Role="comanda" Type="Self.comanda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="mesas">
+        <PropertyRef Name="numero_mesa" />
+      </Principal>
+      <Dependent Role="comanda">
+        <PropertyRef Name="fk_numero_mesa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="procedure_factura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="numero_mesa" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="restaurante_el_buen_saborModelStoreContainer">
+    <EntitySet Name="comanda" EntityType="Self.comanda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estado_mesa" EntityType="Self.estado_mesa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="facturacion" EntityType="Self.facturacion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mesas" EntityType="Self.mesas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pedidos" EntityType="Self.pedidos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos" EntityType="Self.productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos_mesa" EntityType="Self.productos_mesa" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [productos_mesa].[numero_mesa] AS [numero_mesa], 
+    [productos_mesa].[cantidad] AS [cantidad], 
+    [productos_mesa].[producto] AS [producto], 
+    [productos_mesa].[precio_venta] AS [precio_venta]
+    FROM [dbo].[productos_mesa] AS [productos_mesa]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_empleado" EntityType="Self.view_empleado" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_empleado].[identificacion] AS [identificacion], 
+    [view_empleado].[fkpk_tipo_doc] AS [fkpk_tipo_doc], 
+    [view_empleado].[primer_nombre] AS [primer_nombre], 
+    [view_empleado].[primer_apellido] AS [primer_apellido], 
+    [view_empleado].[segundo_nombre] AS [segundo_nombre], 
+    [view_empleado].[segundo_apellido] AS [segundo_apellido], 
+    [view_empleado].[telefono] AS [telefono], 
+    [view_empleado].[email] AS [email], 
+    [view_empleado].[direccion] AS [direccion], 
+    [view_empleado].[rol] AS [rol]
+    FROM [dbo].[view_empleado] AS [view_empleado]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="fk_empleado_rol" Association="Self.fk_empleado_rol">
+      <End Role="rol" EntitySet="rol" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pedidos_comandas" Association="Self.fk_pedidos_comandas">
+      <End Role="comanda" EntitySet="comanda" />
+      <End Role="pedidos" EntitySet="pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pedidos_productos" Association="Self.fk_pedidos_productos">
+      <End Role="productos" EntitySet="productos" />
+      <End Role="pedidos" EntitySet="pedidos" />
+    </AssociationSet>
+    <AssociationSet Name="fkpk_empleado_tipodoc" Association="Self.fkpk_empleado_tipodoc">
+      <End Role="tipo_documento" EntitySet="tipo_documento" />
+      <End Role="empleado" EntitySet="empleado" />
+    </AssociationSet>
+    <AssociationSet Name="fkpk_facturaciuon_comanda" Association="Self.fkpk_facturaciuon_comanda">
+      <End Role="comanda" EntitySet="comanda" />
+      <End Role="facturacion" EntitySet="facturacion" />
+    </AssociationSet>
+    <AssociationSet Name="fkpk_mesas_estado" Association="Self.fkpk_mesas_estado">
+      <End Role="estado_mesa" EntitySet="estado_mesa" />
+      <End Role="mesas" EntitySet="mesas" />
+    </AssociationSet>
+    <AssociationSet Name="fkpk_numero_mesa" Association="Self.fkpk_numero_mesa">
+      <End Role="mesas" EntitySet="mesas" />
+      <End Role="comanda" EntitySet="comanda" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="be973a09536049d484f0793f98e8bb34" Name="Diagram1">
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.comanda" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.empleado" Width="1.5" PointX="10" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.estado_mesa" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.facturacion" Width="1.5" PointX="7.5" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.mesas" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.pedidos" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.productos" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.rol" Width="1.5" PointX="7.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.tipo_documento" Width="1.5" PointX="7.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.productos_mesa" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="restaurante_el_buen_saborModel.view_empleado" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <AssociationConnector Association="restaurante_el_buen_saborModel.fk_pedidos_comandas" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurante_el_buen_saborModel.fkpk_facturaciuon_comanda" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurante_el_buen_saborModel.fkpk_numero_mesa" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurante_el_buen_saborModel.fk_empleado_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurante_el_buen_saborModel.fkpk_empleado_tipodoc" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurante_el_buen_saborModel.fkpk_mesas_estado" ManuallyRouted="false" />
+        <AssociationConnector Association="restaurante_el_buen_saborModel.fk_pedidos_productos" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

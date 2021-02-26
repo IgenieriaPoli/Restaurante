@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="restaurante_el_buen_saborModelStoreContainer" CdmEntityContainer="restaurante_el_buen_saborEntities6">
+    <EntitySetMapping Name="comanda">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.comanda">
+        <MappingFragment StoreEntitySet="comanda">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_numero_mesa" ColumnName="fk_numero_mesa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+          <ScalarProperty Name="fkpk_tipo_doc" ColumnName="fkpk_tipo_doc" />
+          <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+          <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+          <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+          <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+          <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="fk_rol" ColumnName="fk_rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estado_mesa">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.estado_mesa">
+        <MappingFragment StoreEntitySet="estado_mesa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="facturacion">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.facturacion">
+        <MappingFragment StoreEntitySet="facturacion">
+          <ScalarProperty Name="fkpk_id_comanda" ColumnName="fkpk_id_comanda" />
+          <ScalarProperty Name="propina" ColumnName="propina" />
+          <ScalarProperty Name="cobro" ColumnName="cobro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mesas">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.mesas">
+        <MappingFragment StoreEntitySet="mesas">
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="fk_id_estado" ColumnName="fk_id_estado" />
+          <ScalarProperty Name="comensales" ColumnName="comensales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedidos">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.pedidos">
+        <MappingFragment StoreEntitySet="pedidos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fk_id_producto" ColumnName="fk_id_producto" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="fk_id_comanda" ColumnName="fk_id_comanda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.productos">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="precio_compra" ColumnName="precio_compra" />
+          <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rol1" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_documento">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.tipo_documento">
+        <MappingFragment StoreEntitySet="tipo_documento">
+          <ScalarProperty Name="tipo_documento1" ColumnName="tipo_documento" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos_mesa">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.productos_mesa">
+        <MappingFragment StoreEntitySet="productos_mesa">
+          <ScalarProperty Name="numero_mesa" ColumnName="numero_mesa" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="precio_venta" ColumnName="precio_venta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_empleado">
+      <EntityTypeMapping TypeName="restaurante_el_buen_saborModel.view_empleado">
+        <MappingFragment StoreEntitySet="view_empleado">
+          <ScalarProperty Name="identificacion" ColumnName="identificacion" />
+          <ScalarProperty Name="fkpk_tipo_doc" ColumnName="fkpk_tipo_doc" />
+          <ScalarProperty Name="primer_nombre" ColumnName="primer_nombre" />
+          <ScalarProperty Name="primer_apellido" ColumnName="primer_apellido" />
+          <ScalarProperty Name="segundo_nombre" ColumnName="segundo_nombre" />
+          <ScalarProperty Name="segundo_apellido" ColumnName="segundo_apellido" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="procedure_factura" FunctionName="restaurante_el_buen_saborModel.Store.procedure_factura">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="restaurante_el_buen_saborModel.procedure_factura_Result">
+          <ScalarProperty Name="comanda" ColumnName="comanda" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
