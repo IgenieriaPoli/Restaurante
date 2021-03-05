@@ -1,0 +1,9 @@
+body {
+  background-color: #ef6c00;
+}
+
+.hero {
+  background-image: url('img/portada.png');
+  background-size: cover;
+  background-position: center;
+}
